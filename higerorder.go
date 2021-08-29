@@ -24,11 +24,13 @@ func main() {
 		gnums[i] = x
 	}
 	fmt.Println(gnums)
+
 	gsquared := Map(square, gnums)
 	squared := make([]int, len(gsquared))
 	for i, x := range gsquared {
 		squared[i] = x.(int)
 	}
+
 	fmt.Println(squared)
 }
 
