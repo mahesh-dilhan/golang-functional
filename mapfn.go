@@ -1,6 +1,9 @@
 package main
 
-import "reflect"
+import (
+	"fmt"
+	"reflect"
+)
 
 //function types
 type mapf func(interface{}) interface{}
@@ -15,4 +18,16 @@ func Map(in interface{}, fn mapf) interface{} {
 	}
 
 	return out
+}
+
+func main() {
+	a := []int{1, 2, 3, 4}
+
+	//Multiply everything by 2
+	b := Map(a, func(val interface{}) interface{} {
+		return val.(int) * 2
+	})
+
+	//Shoud be [2,4,6,8]
+	fmt.Println("MAP:", a, b)
 }
