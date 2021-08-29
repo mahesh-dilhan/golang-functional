@@ -25,7 +25,7 @@ func main() {
 	}
 	fmt.Println(gnums)
 
-	gsquared := Map(square, gnums)
+	gsquared := Mapfn(square, gnums)
 	squared := make([]int, len(gsquared))
 	for i, x := range gsquared {
 		squared[i] = x.(int)
@@ -34,7 +34,7 @@ func main() {
 	fmt.Println(squared)
 }
 
-func Map(f func(interface{}) interface{}, xs []interface{}) []interface{} {
+func Mapfn(f func(interface{}) interface{}, xs []interface{}) []interface{} {
 	ys := make([]interface{}, len(xs))
 	for i, x := range xs {
 		ys[i] = f(x)
