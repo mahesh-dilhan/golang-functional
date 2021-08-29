@@ -1,6 +1,9 @@
 package main
 
-import "reflect"
+import (
+	"fmt"
+	"reflect"
+)
 
 type filterf func(interface{}) bool
 
@@ -18,4 +21,17 @@ func Filter(in interface{}, fn filterf) interface{} {
 	}
 
 	return out
+}
+
+func main() {
+	b := []int{1, 2, 3, 4}
+
+	//Check if the number is divisble by 4
+	d := Filter(b, func(val interface{}) bool {
+		return val.(int)%4 == 0
+	})
+
+	//Should be [4,8]
+	fmt.Println("FILTER:", b, d)
+
 }
