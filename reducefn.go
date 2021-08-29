@@ -1,6 +1,9 @@
 package main
 
-import "reflect"
+import (
+	"fmt"
+	"reflect"
+)
 
 type reducef func(interface{}, interface{}) interface{}
 
@@ -13,4 +16,15 @@ func Reduce(in interface{}, memo interface{}, fn reducef) interface{} {
 	}
 
 	return memo
+}
+
+func main() {
+	b := []int{1, 2, 3, 4}
+	//Summation
+	c := Reduce(b, 0, func(val interface{}, memo interface{}) interface{} {
+		return memo.(int) + val.(int)
+	})
+
+	//Should be 20
+	fmt.Println("REDUCE:", b, c)
 }
