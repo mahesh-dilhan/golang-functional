@@ -27,4 +27,11 @@ func main() {
 
 	//Should be 20
 	fmt.Println("REDUCE:", b, c)
+
+	c = Reduce(b, 0, func(val interface{}, memo interface{}) interface{} {
+		return memo.(int) - val.(int)
+	})
+
+	fmt.Println("REDUCE:", b, c)
+
 }
