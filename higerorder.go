@@ -32,6 +32,15 @@ func main() {
 	}
 
 	fmt.Println(squared)
+
+	var add10 = add(10)
+	var add20 = add(20)
+	var add30 = add(30)
+
+	fmt.Println(add10(5)) // 15
+	fmt.Println(add20(5)) // 25
+	fmt.Println(add30(5)) // 35
+
 }
 
 func Mapfn(f func(interface{}) interface{}, xs []interface{}) []interface{} {
@@ -44,4 +53,13 @@ func Mapfn(f func(interface{}) interface{}, xs []interface{}) []interface{} {
 
 func caller(f func(str string) string) {
 	fmt.Println(f("hellow world"))
+}
+
+// this is a higher-order-function that returns a function
+func add(x int) func(y int) int {
+	// A function is returned here as closure
+	// variable x is obtained from the outer scope of this method and memorized in the closure
+	return func(y int) int {
+		return x + y
+	}
 }
