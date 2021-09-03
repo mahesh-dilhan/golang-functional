@@ -34,4 +34,9 @@ func main() {
 	//Should be [4,8]
 	fmt.Println("FILTER:", b, d)
 
+	d = Filter(b, func(val interface{}) bool {
+		return val.(int)%4 != 0
+	})
+
+	fmt.Println("FILTER:", b, d)
 }
