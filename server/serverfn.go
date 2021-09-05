@@ -19,6 +19,7 @@ func New(options ...func(*Server)) *Server {
 
 func (s *Server) Start() error {
 	// todo
+	return nil
 }
 
 func WithHost(host string) func(*Server) {
