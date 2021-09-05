@@ -1,12 +1,27 @@
-package server
+package main
 
-import "time"
+import (
+	"log"
+	"time"
+)
 
 type Server struct {
 	host    string
 	port    int
 	timeout time.Duration
 	maxConn int
+}
+
+func main() {
+	svr := New(
+		WithHost("localhost"),
+		WithPort(8080),
+		WithTimeout(time.Minute),
+		WithMaxConn(120),
+	)
+	if err := svr.Start(); err != nil {
+		log.Fatal(err)
+	}
 }
 
 func New(options ...func(*Server)) *Server {
