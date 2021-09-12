@@ -7,8 +7,12 @@ func main() {
 	m := multiply(4)  // example data
 	s := subtract(10) // example data
 	// subtract then multiply
-	sm := func(i int) int { return m(s(i)) }
-	ms := func(i int) int { return s(m(i)) }
+	sm := func(i int) int {
+		return m(s(i))
+	}
+	ms := func(i int) int {
+		return s(m(i))
+	}
 	fmt.Printf("%v %v\n", ms(in), sm(in))
 }
 func multiply(a int) func(int) int {
