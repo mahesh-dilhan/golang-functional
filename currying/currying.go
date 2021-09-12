@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	in := 100
+	in := 200
 	m := multiply(4)  // example data
 	s := subtract(10) // example data
 	// subtract then multiply
