@@ -6,7 +6,7 @@ func main() {
 	ub := &UserBuilder{}
 	user := ub.
 		Name("Mahesh Wijekoon").
-		Role("architect").
+		Role("Architect").
 		Build()
 	fmt.Println(user)
 }
