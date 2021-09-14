@@ -34,8 +34,9 @@ func (ub *UserBuilder) Name(name string) *UserBuilder {
 func (ub *UserBuilder) Role(role string) *UserBuilder {
 	// verify the role is valid
 	if role == "architect" {
-		ub.User.MinSalary = 90000
 		ub.User.MaxSalary = 160000
+		ub.User.MinSalary = 90000
+
 	}
 	ub.User.Role = role
 	return ub
