@@ -5,8 +5,8 @@ import "fmt"
 func main() {
 	ub := &UserBuilder{}
 	user := ub.
-		Name("Mahesh Wijekoon").
 		Role("Architect").
+		Name("Mahesh Wijekoon").
 		Build()
 	fmt.Println(user)
 }
