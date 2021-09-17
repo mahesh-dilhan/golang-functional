@@ -38,6 +38,6 @@ func main() {
 		return memo.(int) * val.(int)
 	})
 
-	fmt.Println("REDUCE:", b, c)
+	fmt.Println("multiply:", b, c)
 
 }
