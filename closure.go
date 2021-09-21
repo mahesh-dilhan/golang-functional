@@ -20,6 +20,7 @@ func main() {
 	f2() // 2
 	f1() // 2
 	f2() // 2
+        f1()
 
 	pos, neg := adder(), adder()
 	for i := 0; i < 10; i++ {
