@@ -39,4 +39,10 @@ func main() {
 
 	fmt.Println("MAP:", c, b)
 
+	b = Map(c, func(val interface{}) interface{} {
+		return val.(int) + 2
+	})
+
+	fmt.Println("MAP:", c, b)
+
 }
