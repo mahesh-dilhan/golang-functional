@@ -16,4 +16,6 @@ func main() {
 
 	fmt.Println(plus_one(6)) //prints 6
 
+	fmt.Println(plus_one(7)) //prints 6
+
 }
