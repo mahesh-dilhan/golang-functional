@@ -20,4 +20,6 @@ func main() {
 
 	fmt.Println(plus_one(8)) //prints 6
 
+	fmt.Println(plus_one(10)) //prints 6
+
 }
