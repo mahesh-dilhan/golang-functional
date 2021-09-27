@@ -11,7 +11,7 @@ func main() {
 		return strings.ToUpper(str)
 	}
 
-	caller(f)
+	caller("Golang", f)
 
 	square := func(x interface{}) interface{} {
 		return x.(int) * x.(int)
@@ -51,8 +51,8 @@ func Mapfn(f func(interface{}) interface{}, xs []interface{}) []interface{} {
 	return ys
 }
 
-func caller(f func(str string) string) {
-	fmt.Println(f("hellow world"))
+func caller(str string, f func(str string) string) {
+	fmt.Println(f("hellow world " + str))
 }
 
 // this is a higher-order-function that returns a function
